@@ -3,7 +3,7 @@ import express from 'express'
 import cors from 'cors'
 
 //import a file we will create to store our routes
-import books from './frontend/api/books.route.js'
+import books from './api/books.route'
 
 //create server
 const app = express()
