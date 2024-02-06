@@ -156,7 +156,7 @@ function BookSearch() {
                         ))}
                     </Row>
                 )}
-                <div position='sitcky' bottom='0' style={{ display: 'flex', justifyContent: 'space-around' }}>
+                <div position='sticky' bottom='0' style={{ display: 'flex', justifyContent: 'space-around' }}>
                     <Button onClick={handlePreviousPage} disabled={currentPage === 0} style={{ width: '20%', minWidth: '150px' }}>Previous</Button>
                     <Button onClick={handleNextPage} disabled={searchResults.length < resultsPerPage} style={{ width: '20%', minWidth: '150px' }}>Next</Button>
                 </div>

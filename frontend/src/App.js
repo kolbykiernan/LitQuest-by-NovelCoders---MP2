@@ -1,21 +1,25 @@
 import React from 'react';
-import './App.css';
-import { BrowserRouter as Router, Route, Link, Routes } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
+import StartPage from './components/StartPage';
 import BookSearch from './components/BookSearch';
-import Bookshelf from './components/Bookshelf'; // Make sure the import matches the renamed file
-import 'bootstrap/dist/css/bootstrap.min.css';
-import { Button } from 'react-bootstrap';
+import Bookshelf from './components/Bookshelf';
+import 'bootstrap/dist/css/bootstrap.min.css'; // Assuming you're using Bootstrap for styling
 
 function App() {
   return (
     <Router>
       <div className="App">
         <nav style={{ margin: '20px' }}>
-          <Link to="/" style={{ marginRight: '10px' }}><Button>Book Search</Button></Link>
-          <Link to="/bookshelf"><Button>My Bookshelf</Button></Link>
+          {/* Update these Links to use 'to' for navigation */}
+          <Link to="/" style={{ marginRight: '10px' }}>Home</Link>
+          <Link to="/search" style={{ marginRight: '10px' }}>Book Search</Link>
+          <Link to="/bookshelf">My Bookshelf</Link>
         </nav>
         <Routes>
-          <Route exact path="/" element={<BookSearch />} />
+          {/* Define the root path to point to StartPage */}
+          <Route exact path="/" element={<StartPage />} />
+          {/* Define other paths */}
+          <Route path="/search" element={<BookSearch />} />
           <Route path="/bookshelf" element={<Bookshelf />} />
         </Routes>
       </div>

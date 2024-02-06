@@ -1,0 +1,46 @@
+.start-page {
+    text-align: center;
+    padding-top: 50px; /* Adjust as needed for your layout */
+  }
+  
+  .start-page .logo {
+    /* Add styles for your logo here, such as width, height, margin, etc. */
+  }
+  
+  .start-page h1 {
+    margin-top: 20px;
+    /* Add styles for your h1 element here */
+  }
+  
+  .start-page p {
+    margin: 10px 0;
+    /* Add styles for your paragraph elements here */
+  }
+  
+  .start-buttons {
+    margin-top: 30px;
+  }
+  
+  .start-buttons .btn {
+    margin: 10px;
+    padding: 10px 20px;
+    /* Add other button styles here */
+  }
+  
+  /* Since it's a React app, you might also want to style the Link components */
+  .start-buttons .btn-primary {
+    background-color: green;
+    border: none;
+  }
+  
+  .start-buttons .btn-outline-primary {
+    background-color: transparent;
+    border: 2px solid green;
+    color: green;
+  }
+  
+  .start-buttons .btn-primary:hover,
+  .start-buttons .btn-outline-primary:hover {
+    opacity: 0.8;
+  }
+  
