@@ -67,7 +67,7 @@ function BookshelfDisplay() {
             height: '20px',
             backgroundColor: checked ? '#28a745' : '#fff',
             border: '1px solid #ced4da',
-            boxShadow: `0 0 5px ${checked ? 'green' : 'orange'}`,
+            boxShadow: `0 0 5px ${checked ? 'var(--primary-color)' : 'var(--third-color)'}`,
             cursor: 'pointer',
             display: 'inline-block',
             marginRight: '8px',

@@ -7,7 +7,6 @@
   background-color: var(--primary-color);
 }
 .start-page {
-<<<<<<< HEAD
     text-align: center;
     padding-top: 50px; /* Adjust as needed for your layout */
     background-color: var(--secondary-color);
@@ -22,7 +21,6 @@
     color: var(--primary-color);
     font-family: 'Noto Serif', serif;
     font-weight:bold;
-=======
   text-align: center;
   padding-top: 50px; /* Adjust as needed for your layout */
 }
@@ -77,22 +75,17 @@
   }
   .start-page h1 {
     font-size: 24px; /* fixed font size for larger screens */
->>>>>>> 5852a4ad86629ac32f7047198203c7387e708ff7
   }
   .start-page p {
-<<<<<<< HEAD
     margin: 10px 0;
     color: var(--primary-color);
     /* Add styles for your paragraph elements here */
-=======
     font-size: 18px; /* fixed font size for larger screens */
->>>>>>> 5852a4ad86629ac32f7047198203c7387e708ff7
   }
   .start-buttons .btn {
     padding: 10px 20px; /* fixed padding for larger screens */
     font-size: 16px; /* fixed font size for larger screens */
   }
-<<<<<<< HEAD
   
   /* Since it's a React app, you might also want to style the Link components */
   .start-buttons .btn-primary {
@@ -104,7 +97,6 @@
     background-color: transparent;
     border: 2px solid var(--primary-color);
     color: var(--primary-color);
-=======
 }
 
 /* Media queries for smaller screens */
@@ -114,20 +106,9 @@
   }
   .start-page .logo img {
     max-width: 100px; /* example max-width for smaller screens */
->>>>>>> 5852a4ad86629ac32f7047198203c7387e708ff7
   }
   .start-page h1 {
     font-size: 20px; /* fixed font size for smaller screens */
   }
-<<<<<<< HEAD
-  
-=======
-  .start-page p {
-    font-size: 14px; /* fixed font size for smaller screens */
-  }
-  .start-buttons .btn {
-    padding: 8px 16px; /* fixed padding for smaller screens */
-    font-size: 14px; /* fixed font size for smaller screens */
-  }
 }
->>>>>>> 5852a4ad86629ac32f7047198203c7387e708ff7
+}

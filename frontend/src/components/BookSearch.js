@@ -151,16 +151,40 @@ function BookSearch() {
                                                 </>
                                             )}
                                         </Card.Text>
+                                        <div style={{ 
+    position: 'fixed', // Keep the div fixed at the bottom of the screen
+    bottom: '0', // Anchor the div to the bottom
+    left: '0', // Stretch from the left edge of the viewport
+    right: '0', // Stretch to the right edge of the viewport
+    display: 'flex',
+    justifyContent: 'space-around',
+    background: 'white', // Background color to ensure content doesn't show through
+    padding: '10px 0', // Padding above and below the buttons
+    boxShadow: '0 -2px 5px rgba(0,0,0,0.2)', // Shadow for visual separation from content
+}}>
+  <Button 
+    onClick={handlePreviousPage} 
+    disabled={currentPage === 0} 
+    style={{ width: '20%', minWidth: '150px' }}
+  >
+    Previous
+  </Button>
+  <Button 
+    onClick={handleNextPage} 
+    disabled={searchResults.length < resultsPerPage} 
+    style={{ width: '20%', minWidth: '150px' }}
+  >
+    Next
+  </Button>
+</div>
                                     </Card.Body>
                                 </Card>
                             </Col>
                         ))}
+                        
                     </Row>
                 )}
-                <div position='sticky' bottom='0' style={{ display: 'flex', justifyContent: 'space-around' }}>
-                    <Button onClick={handlePreviousPage} disabled={currentPage === 0} style={{ width: '20%', minWidth: '150px' }}>Previous</Button>
-                    <Button onClick={handleNextPage} disabled={searchResults.length < resultsPerPage} style={{ width: '20%', minWidth: '150px' }}>Next</Button>
-                </div>
+                
             </Container>
            
         </>
