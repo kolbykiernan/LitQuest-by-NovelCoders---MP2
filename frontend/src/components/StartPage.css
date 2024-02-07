@@ -1,19 +1,31 @@
+:root {
+  --primary-color: #136942ff;
+  --secondary-color:#FAFFF4;
+  --third-color: #FFE25Fff;
+}
+.navbar {
+  background-color: var(--primary-color);
+}
 .start-page {
     text-align: center;
     padding-top: 50px; /* Adjust as needed for your layout */
+    background-color: var(--secondary-color);
   }
   
   .start-page .logo {
-    /* Add styles for your logo here, such as width, height, margin, etc. */
+    
   }
   
   .start-page h1 {
     margin-top: 20px;
-    /* Add styles for your h1 element here */
+    color: var(--primary-color);
+    font-family: 'Noto Serif', serif;
+    font-weight:bold;
   }
   
   .start-page p {
     margin: 10px 0;
+    color: var(--primary-color);
     /* Add styles for your paragraph elements here */
   }
   
@@ -29,14 +41,14 @@
   
   /* Since it's a React app, you might also want to style the Link components */
   .start-buttons .btn-primary {
-    background-color: green;
+    background-color: var(--primary-color);
     border: none;
   }
   
   .start-buttons .btn-outline-primary {
     background-color: transparent;
-    border: 2px solid green;
-    color: green;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
   }
   
   .start-buttons .btn-primary:hover,

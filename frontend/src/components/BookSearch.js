@@ -6,6 +6,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
+import './BookSearch.css';
 
 function BookSearch() {
     const [bookName, setBookName] = useState('');
@@ -108,9 +109,9 @@ function BookSearch() {
 
     return (
         <>
-            <Container style={{ backgroundColor: '#f0f8ff', minHeight: '100vh', padding: '20px' }}>
+            <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '20px' }}>
                 <div style={{ marginBottom: '20px' }}>
-                    <h1>Book Search</h1>
+                    <h1 className='BookSearchTitle'>Book Search</h1>
                     <input
                         type="text"
                         placeholder="Enter a book name"

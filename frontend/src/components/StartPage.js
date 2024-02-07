@@ -7,7 +7,7 @@ const StartPage = () => {
     <div className="start-page">
       <div className="logo">
         {<div className="logo">
-  <img src="/LitQuest-Logo.png" alt="LitQuest Logo" />
+  <img src="/LQLogo.png" alt="LitQuest Logo" />
 </div>
 }
       </div>

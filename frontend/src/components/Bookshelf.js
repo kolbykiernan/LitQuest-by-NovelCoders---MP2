@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Card, Container, Row, Col, Spinner, Button } from 'react-bootstrap';
+import './Bookshelf.css';
 
 function BookshelfDisplay() {
     const [books, setBooks] = useState([]);
@@ -77,10 +78,10 @@ function BookshelfDisplay() {
     );
 
     return (
-        <Container style={{ backgroundColor: '#f0f8ff', minHeight: '100vh', padding: '20px' }}>
-            <h1>My Bookshelf</h1>
+        <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '20px' }}>
+            <h1 className='BookshelfTitle'>My Bookshelf</h1>
             {loading ? (
-                <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
+                <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh'}}>
                     <Spinner animation="border" />
                 </div>
             ) : (
@@ -88,7 +89,7 @@ function BookshelfDisplay() {
                     {books.map((book) => (
                         <Col key={book._id}>
                             <Card
-                                style={{ marginBottom: '1rem', backgroundColor: '#f7fbff', boxShadow: book.readStatus ? '0 0 10px green' : '0 0 10px orange' }}
+                                style={{ marginBottom: '1rem', backgroundColor: 'var(--secondary-color', boxShadow: book.readStatus ? '0 0 10px green' : '0 0 10px orange' }}
                                 onClick={() => toggleExpand(book._id)}
                             >
                                 <Card.Body>
