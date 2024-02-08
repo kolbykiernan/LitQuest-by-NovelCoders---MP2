@@ -109,8 +109,9 @@ function BookSearch() {
 
     return (
         <>
-            <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '20px' }}>
-                <div style={{ marginBottom: '20px' }}>
+            <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '0px' }}>
+                <div style={{ marginBottom: '0px', backgroundColor: 'var(--primary-color)' }}>
+                
                     <h1 className='BookSearchTitle'>Book Search</h1>
                     <input
                         type="text"
@@ -122,7 +123,7 @@ function BookSearch() {
                     />
                     <br />
                     <div style={{ display: 'flex', justifyContent: 'space-around' }}>
-                        <Button onClick={() => handleSearch(currentPage)} style={{ width: '20%', minWidth: '200px' }}>Search</Button>
+                        <Button onClick={() => handleSearch(currentPage)} style={{ width: '20%', minWidth: '200px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none' }}>Search</Button>
 
                     </div>
                 </div>
@@ -158,21 +159,21 @@ function BookSearch() {
     right: '0', // Stretch to the right edge of the viewport
     display: 'flex',
     justifyContent: 'space-around',
-    background: 'white', // Background color to ensure content doesn't show through
+    background: 'var(--primary-color)', // Background color to ensure content doesn't show through
     padding: '10px 0', // Padding above and below the buttons
     boxShadow: '0 -2px 5px rgba(0,0,0,0.2)', // Shadow for visual separation from content
 }}>
   <Button 
     onClick={handlePreviousPage} 
     disabled={currentPage === 0} 
-    style={{ width: '20%', minWidth: '150px' }}
+    style={{ width: '20%', minWidth: '150px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none' }}
   >
     Previous
   </Button>
   <Button 
     onClick={handleNextPage} 
     disabled={searchResults.length < resultsPerPage} 
-    style={{ width: '20%', minWidth: '150px' }}
+    style={{ width: '20%', minWidth: '150px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none'}}
   >
     Next
   </Button>
