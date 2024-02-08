@@ -109,7 +109,7 @@ function BookSearch() {
     };
 
     return (
-        <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh' }}>
+        <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh', textAlign: 'center'}}>
         <>
             <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '0px' }}>
                 
