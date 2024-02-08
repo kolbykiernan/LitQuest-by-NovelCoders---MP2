@@ -111,7 +111,7 @@ function BookSearch() {
     return (
         <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh', textAlign: 'center'}}>
         <>
-            <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '0px' }}>
+            <Container className='book-search-container'>
                 
                     <h1 className='BookSearchTitle'>Book Search</h1>
                     <div className='search-input-container'>
