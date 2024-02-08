@@ -7,6 +7,7 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import Spinner from 'react-bootstrap/Spinner';
 import './BookSearch.css';
+import { BsSearch } from "react-icons/bs";
 
 function BookSearch() {
     const [bookName, setBookName] = useState('');
@@ -110,23 +111,24 @@ function BookSearch() {
     return (
         <>
             <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '0px' }}>
-                <div style={{ marginBottom: '0px', backgroundColor: 'var(--primary-color)' }}>
                 
                     <h1 className='BookSearchTitle'>Book Search</h1>
-                    <input
+                    <div className='search-input-container'>
+                    <input 
                         type="text"
-                        placeholder="Enter a book name"
+                        placeholder="Enter a book name"                         
                         value={bookName}
                         onChange={(e) => setBookName(e.target.value)}
                         onKeyPress={(e) => e.key === 'Enter' && handleSearch(currentPage)}
                         style={{ marginBottom: '10px', width: '20%', minWidth: '200px' }}
                     />
+                    <BsSearch/>
+                    </div>
                     <br />
-                    <div style={{ display: 'flex', justifyContent: 'space-around' }}>
+                    {/* <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                         <Button onClick={() => handleSearch(currentPage)} style={{ width: '20%', minWidth: '200px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none' }}>Search</Button>
 
-                    </div>
-                </div>
+                    </div> */}
                 {loading ? (
                     <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
                         <Spinner animation="border" />
