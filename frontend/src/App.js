@@ -4,13 +4,13 @@ import StartPage from './components/StartPage';
 import BookSearch from './components/BookSearch';
 import Bookshelf from './components/Bookshelf';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Assuming you're using Bootstrap for styling
-import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import { Navbar, Nav, Dropdown } from 'react-bootstrap';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar bg="primary" expand="lg" variant="dark">
+        <Navbar bg="var(--primary-color)" expand="lg" variant="dark">
           <Navbar.Brand as={Link} to="/">LitQuest</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">

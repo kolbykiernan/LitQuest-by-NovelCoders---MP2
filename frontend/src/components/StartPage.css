@@ -4,7 +4,7 @@
   --third-color: #FFE25Fff;
 }
 .navbar {
-  background-color: var(--secondary-color);
+  background-color: var(--primary-color);
 }
 .start-page {
     text-align: center;

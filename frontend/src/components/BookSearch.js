@@ -58,7 +58,7 @@ function BookSearch() {
         const bookData = {
             title: book.volumeInfo.title,
             description: book.volumeInfo.description,
-            image: book.volumeInfo.imageLinks?.thumbnail || '',
+            image: `https://books.google.com/books/publisher/content/images/frontcover/${book.id}?fife=w400-h600&source=gbs_api`,
             // Add other book details as needed
         };
 
@@ -138,8 +138,9 @@ function BookSearch() {
                         <Row xs={1} md={2} lg={3} className="g-4">
                             {searchResults.map((item, index) => (
                                 <Col key={index}>
-                                    <Card style={{ marginBottom: '1rem', backgroundColor: '#f7fbff' }} onClick={() => toggleExpand(index)}>
-                                        <Card.Img variant="top" src={item.volumeInfo.imageLinks?.thumbnail} alt={item.volumeInfo.title} style={{ minHeight: '20%', height: '20%', maxheight: '20%', objectFit: 'contain' }} />
+                                    <Card style={{ marginBottom: '1rem', backgroundColor: 'var()' }} onClick={() => toggleExpand(index)}>
+                                        {/* <Card.Img variant="top" src={item.volumeInfo.imageLinks?.thumbnail} alt={item.volumeInfo.title} style={{ minHeight: '20%', height: '20%', maxheight: '20%', objectFit: 'contain' }} /> */}
+                                        <Card.Img variant="top" src={`https://books.google.com/books/publisher/content/images/frontcover/${item.id}?fife=w400-h600&source=gbs_api`} alt={item.volumeInfo.title} style={{ minHeight: '20%', height: '20%', maxHeight: '20%', objectFit: 'contain' }} />
                                         <Card.Body >
                                             <Card.Title>{`${item.volumeInfo.title}`}</Card.Title>
                                             <Card.Text>
