@@ -1,3 +1,9 @@
+:root {
+  --primary-color: #136942ff;
+  --secondary-color:#FAFFF4;
+  --third-color: #FFE25Fff;
+}
+
 .App {
   text-align: center;
   background-color: var(--primary-color);
