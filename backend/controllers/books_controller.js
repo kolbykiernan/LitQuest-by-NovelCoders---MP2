@@ -6,9 +6,18 @@ export const router = express.Router();
 
 // Endpoint to add a book to the bookshelf
 router.post('/add', async (req, res) => {
-    // const { title, description } = req.body;
+    const { title, description, image } = req.body; // Assuming 'title' can be used as a unique identifier
+
     try {
-        const newBook = new Book(req.body);
+        // Check if a book with the same title already exists
+        const existingBook = await Book.findOne({ title });
+
+        if (existingBook) {
+            return res.status(409).json({ message: 'Book already exists in the bookshelf' });
+        }
+
+        // If no existing book is found, proceed to add the new book
+        const newBook = new Book({ title, description, image });
         await newBook.save();
         res.status(201).json(newBook);
     } catch (error) {

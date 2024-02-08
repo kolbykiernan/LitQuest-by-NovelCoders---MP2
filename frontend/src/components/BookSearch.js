@@ -61,7 +61,7 @@ function BookSearch() {
             image: book.volumeInfo.imageLinks?.thumbnail || '',
             // Add other book details as needed
         };
-    
+
         try {
             const response = await fetch('/bookshelf/add', {  // Updated endpoint
                 method: 'POST',
@@ -70,17 +70,17 @@ function BookSearch() {
                 },
                 body: JSON.stringify(bookData),
             });
-    
+
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
-    
+
             const result = await response.json();
             console.log('Book added to bookshelf:', result);
             alert('Book added to bookshelf!');
         } catch (error) {
             console.error('Error adding book to bookshelf:', error);
-            alert('Failed to add book to bookshelf.');
+            alert('Failed to add book to bookshelf, or already exists in the bookshelf.');
         }
     };
 
@@ -109,89 +109,89 @@ function BookSearch() {
     };
 
     return (
-        <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh', textAlign: 'center'}}>
-        <>
-            <Container className='book-search-container'>
-                
+        <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh', textAlign: 'center' }}>
+            <>
+                <Container className='book-search-container'>
+
                     <h1 className='BookSearchTitle'>Book Search</h1>
                     <div className='search-input-container'>
-                    <input 
-                        type="text"
-                        placeholder="Enter a book name"                         
-                        value={bookName}
-                        onChange={(e) => setBookName(e.target.value)}
-                        onKeyPress={(e) => e.key === 'Enter' && handleSearch(currentPage)}
-                        style={{ marginBottom: '10px', width: '20%', minWidth: '200px' }}
-                    />
-                    <BsSearch/>
+                        <input
+                            type="text"
+                            placeholder="Enter a book name"
+                            value={bookName}
+                            onChange={(e) => setBookName(e.target.value)}
+                            onKeyPress={(e) => e.key === 'Enter' && handleSearch(currentPage)}
+                            style={{ marginBottom: '10px', width: '20%', minWidth: '200px' }}
+                        />
+                        <BsSearch />
                     </div>
                     <br />
                     {/* <div style={{ display: 'flex', justifyContent: 'space-around' }}>
                         <Button onClick={() => handleSearch(currentPage)} style={{ width: '20%', minWidth: '200px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none' }}>Search</Button>
 
                     </div> */}
-                {loading ? (
-                    <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
-                        <Spinner animation="border" />
-                    </div>
-                ) : (
-                    <Row xs={1} md={2} lg={3} className="g-4">
-                        {searchResults.map((item, index) => (
-                            <Col key={index}>
-                                <Card style={{ marginBottom: '1rem', backgroundColor: '#f7fbff' }} onClick={() => toggleExpand(index)}>
-                                    <Card.Img variant="top" src={item.volumeInfo.imageLinks?.thumbnail} alt={item.volumeInfo.title} style={{ minHeight: '20%', height: '20%', maxheight: '20%', objectFit: 'contain' }} />
-                                    <Card.Body >
-                                        <Card.Title>{`${item.volumeInfo.title}`}</Card.Title>
-                                        <Card.Text>
-                                            {item.volumeInfo.authors && `Author(s): ${item.volumeInfo.authors.join(', ')}`}
-                                            {item.isExpanded && (
-                                                <>
-                                                    <br />
-                                                    <Card.Text>Description: {item.volumeInfo.description}</Card.Text>
-                                                    <Card.Text>Published Date: {item.volumeInfo.publishedDate}</Card.Text>
-                                                    <Card.Text>Genre: {item.volumeInfo.categories?.join(', ')}</Card.Text>
-                                                    <Button variant="primary" onClick={() => addToBookshelf(item)}>Add to Bookshelf</Button>
+                    {loading ? (
+                        <div className="d-flex justify-content-center align-items-center" style={{ height: '50vh' }}>
+                            <Spinner animation="border" />
+                        </div>
+                    ) : (
+                        <Row xs={1} md={2} lg={3} className="g-4">
+                            {searchResults.map((item, index) => (
+                                <Col key={index}>
+                                    <Card style={{ marginBottom: '1rem', backgroundColor: '#f7fbff' }} onClick={() => toggleExpand(index)}>
+                                        <Card.Img variant="top" src={item.volumeInfo.imageLinks?.thumbnail} alt={item.volumeInfo.title} style={{ minHeight: '20%', height: '20%', maxheight: '20%', objectFit: 'contain' }} />
+                                        <Card.Body >
+                                            <Card.Title>{`${item.volumeInfo.title}`}</Card.Title>
+                                            <Card.Text>
+                                                {item.volumeInfo.authors && `Author(s): ${item.volumeInfo.authors.join(', ')}`}
+                                                {item.isExpanded && (
+                                                    <>
+                                                        <br />
+                                                        <Card.Text>Description: {item.volumeInfo.description}</Card.Text>
+                                                        <Card.Text>Published Date: {item.volumeInfo.publishedDate}</Card.Text>
+                                                        <Card.Text>Genre: {item.volumeInfo.categories?.join(', ')}</Card.Text>
+                                                        <Button variant="primary" onClick={() => addToBookshelf(item)}>Add to Bookshelf</Button>
 
-                                                </>
-                                            )}
-                                        </Card.Text>
-                                        <div style={{ 
-    position: 'fixed', // Keep the div fixed at the bottom of the screen
-    bottom: '0', // Anchor the div to the bottom
-    left: '0', // Stretch from the left edge of the viewport
-    right: '0', // Stretch to the right edge of the viewport
-    display: 'flex',
-    justifyContent: 'space-around',
-    background: 'var(--primary-color)', // Background color to ensure content doesn't show through
-    padding: '10px 0', // Padding above and below the buttons
-    boxShadow: '0 -2px 5px rgba(0,0,0,0.2)', // Shadow for visual separation from content
-}}>
-  <Button 
-    onClick={handlePreviousPage} 
-    disabled={currentPage === 0} 
-    style={{ width: '20%', minWidth: '150px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none' }}
-  >
-    Previous
-  </Button>
-  <Button 
-    onClick={handleNextPage} 
-    disabled={searchResults.length < resultsPerPage} 
-    style={{ width: '20%', minWidth: '150px', backgroundColor: 'var(--third-color)', color:'var(--primary-color)', border: 'none'}}
-  >
-    Next
-  </Button>
-</div>
-                                    </Card.Body>
-                                </Card>
-                            </Col>
-                        ))}
-                        
-                    </Row>
-                )}
-                
-            </Container>
-           
-        </>
+                                                    </>
+                                                )}
+                                            </Card.Text>
+                                            <div style={{
+                                                position: 'fixed', // Keep the div fixed at the bottom of the screen
+                                                bottom: '0', // Anchor the div to the bottom
+                                                left: '0', // Stretch from the left edge of the viewport
+                                                right: '0', // Stretch to the right edge of the viewport
+                                                display: 'flex',
+                                                justifyContent: 'space-around',
+                                                background: 'var(--primary-color)', // Background color to ensure content doesn't show through
+                                                padding: '10px 0', // Padding above and below the buttons
+                                                boxShadow: '0 -2px 5px rgba(0,0,0,0.2)', // Shadow for visual separation from content
+                                            }}>
+                                                <Button
+                                                    onClick={handlePreviousPage}
+                                                    disabled={currentPage === 0}
+                                                    style={{ width: '20%', minWidth: '150px', backgroundColor: 'var(--third-color)', color: 'var(--primary-color)', border: 'none' }}
+                                                >
+                                                    Previous
+                                                </Button>
+                                                <Button
+                                                    onClick={handleNextPage}
+                                                    disabled={searchResults.length < resultsPerPage}
+                                                    style={{ width: '20%', minWidth: '150px', backgroundColor: 'var(--third-color)', color: 'var(--primary-color)', border: 'none' }}
+                                                >
+                                                    Next
+                                                </Button>
+                                            </div>
+                                        </Card.Body>
+                                    </Card>
+                                </Col>
+                            ))}
+
+                        </Row>
+                    )}
+
+                </Container>
+
+            </>
         </div>
     );
 }
