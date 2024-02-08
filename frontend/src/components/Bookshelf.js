@@ -72,6 +72,7 @@ function BookshelfDisplay() {
             display: 'inline-block',
             marginRight: '8px',
             verticalAlign: 'middle',
+            
         }}>
             {checked && <span style={{ color: '#fff', display: 'block', textAlign: 'center' }}>&#10003;</span>}
         </div>
@@ -90,7 +91,7 @@ function BookshelfDisplay() {
                     {books.map((book) => (
                         <Col key={book._id}>
                             <Card
-                                style={{ marginBottom: '1rem', backgroundColor: 'var(--secondary-color', boxShadow: book.readStatus ? '0 0 10px green' : '0 0 10px orange' }}
+                                style={{ marginBottom: '1rem', backgroundColor: 'var(--secondary-color', boxShadow: book.readStatus ? '0 0 10px blue' : '0 0 10px yellow' }}
                                 onClick={() => toggleExpand(book._id)}
                             >
                                 <Card.Body>

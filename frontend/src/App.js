@@ -5,12 +5,13 @@ import BookSearch from './components/BookSearch';
 import Bookshelf from './components/Bookshelf';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Assuming you're using Bootstrap for styling
 import { Navbar, Nav, NavDropdown } from 'react-bootstrap';
+import './App.css';
 
 function App() {
   return (
     <Router>
       <div className="App">
-        <Navbar bg="primary" expand="lg" variant="dark">
+        <Navbar content='lg' expand="lg" variant="dark" style={{ backgroundColor: 'var(--primary-color)' }}>
           <Navbar.Brand as={Link} to="/">LitQuest</Navbar.Brand>
           <Navbar.Toggle aria-controls="basic-navbar-nav" />
           <Navbar.Collapse id="basic-navbar-nav">
