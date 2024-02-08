@@ -109,6 +109,7 @@ function BookSearch() {
     };
 
     return (
+        <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh' }}>
         <>
             <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '0px' }}>
                 
@@ -191,6 +192,7 @@ function BookSearch() {
             </Container>
            
         </>
+        </div>
     );
 }
 

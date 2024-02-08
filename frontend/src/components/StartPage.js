@@ -4,6 +4,7 @@ import './StartPage.css'; // Path to your CSS file
 
 const StartPage = () => {
   return (
+    <div style={{ backgroundColor: 'var(--secondary-color)', width: '100%', height: '100vh' }}>
     <div className="start-page">
       <div className="logo">
         {<div className="logo">
@@ -18,6 +19,7 @@ const StartPage = () => {
         <Link to="/search" className="btn btn-primary">Book Search</Link>
         <Link to="/bookshelf" className="btn btn-outline-primary">My Bookshelf</Link>
       </div>
+    </div>
     </div>
   );
 };

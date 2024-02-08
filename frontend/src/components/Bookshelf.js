@@ -78,6 +78,7 @@ function BookshelfDisplay() {
     );
 
     return (
+        <div style={{ backgroundColor: 'var(--primary-color)', width: '100%', height: '100vh' }}>
         <Container style={{ backgroundColor: 'var(--primary-color)', minHeight: '100vh', padding: '20px' }}>
             <h1 className='BookshelfTitle'>My Bookshelf</h1>
             {loading ? (
@@ -113,6 +114,7 @@ function BookshelfDisplay() {
                 </Row>
             )}
         </Container>
+        </div>
     );
 }
 
