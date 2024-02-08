@@ -4,19 +4,34 @@ import StartPage from './components/StartPage';
 import BookSearch from './components/BookSearch';
 import Bookshelf from './components/Bookshelf';
 import 'bootstrap/dist/css/bootstrap.min.css'; // Assuming you're using Bootstrap for styling
-import {Navbar, Nav, Container, NavDropdown} from 'react-bootstrap';
+import {Navbar, Nav, Container, Dropdown} from 'react-bootstrap';
 
 
 function App() {
   return (
       <Router>
       <div className="App">
-        <nav className="navbar" style={{ margin: '0px' }}>
-          {/* Update these Links to use 'to' for navigation */}
-          <Link to="/" style={{ marginRight: '0px', color: 'var(--secondary-color)', textDecoration: 'none' }}>Home</Link>
-          <Link to="/search" style={{ marginRight: '0px', color: 'var(--secondary-color)', textDecoration: 'none' }}>Book Search</Link>
-          <Link to="/bookshelf"style={{ marginRight: '0px', color: 'var(--secondary-color)', textDecoration: 'none' }}>My Bookshelf</Link>
-        </nav>
+        <Navbar bg="var(--primary-color)" expand="lg">
+      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav">
+        <Nav className="mr-auto">
+          
+          {/* Dropdown menu */}
+          <Dropdown>
+            <Dropdown.Toggle variant="success" id="dropdown-basic">
+              <span className="navbar-toggler-icon"></span> {/* Hamburger icon */}
+            </Dropdown.Toggle>
+
+            <Dropdown.Menu>
+              {/* Dropdown links */}
+              <Dropdown.Item href="/" style={{ marginRight: '0px', color: 'var(--primary-color)', textDecoration: 'none' }}>Home</Dropdown.Item>
+              <Dropdown.Item href="/search" style={{ marginRight: '0px', color: 'var(--primary-color)', textDecoration: 'none' }}>Book Search</Dropdown.Item>
+              <Dropdown.Item href="/bookshelf"style={{ marginRight: '0px', color: 'var(--primary-color)', textDecoration: 'none' }}>My Bookshelf</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
+        </Nav>
+      </Navbar.Collapse>
+    </Navbar>
         <Routes>
           {/* Define the root path to point to StartPage */}
           <Route exact path="/" element={<StartPage />} />
