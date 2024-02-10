@@ -1,70 +1,142 @@
-# Getting Started with Create React App
+# LitQuest
+### by the group NovelCoders
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+    This project was changed from a 1000 book recommendation to a sort of a library/bookshelf, for the user to keep track of books that they want to read, or have already read.
 
-## Available Scripts
+## Getting Started
+These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See Deployment for a link to where the app is currently running.
 
-In the project directory, you can run:
+## Prerequisites
+To run this, you need to run the following Node.js packages, if they're not installed already:
+On the frontend folder, you need to install:
+`npm install axios react-bootstrap bootstrap cors express mongoose react react-dom react-router-dom react-scripts web-vitals'
 
-### `npm start`
+On the backend folder, you need to install:
+`npm install axios cors dotenv express mongodb mongoose`
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Installing
+To get this project running, you will first to start, and connect, the mongoDB, by whichever means you usually do, and you will need 2 console/bash teminals. On the first one, if you are in the root folder for the project, you need to first go to the backend folder by typing
+`cd backend`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+followed by:
+`npx nodemon server.js`
 
-### `npm test`
+After that, on the second terminal/bash window, from the root folder you need to go to the frontend folder by typing
+`cd frontend`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+followed by:
+`npm start`
 
-### `npm run build`
+at this point, you should have the the server.js connected to the database, and the npm start running the app.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## How to use this app
+Using this app is straight forward, and simple:
+    Click on "Book Search" to look for books
+        Enter a search term and either hit enter or click search
+        Click on the book that interests you
+        If there is a description, at the end of the description, if you like, click add to bookshelf
+    Or click on "My Bookshelf" to view the books already added to the bookshelf
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Running the tests
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+## End-to-end tests
 
-### `npm run eject`
+## Coding style test
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+## Deployment
+This project is currently deployed at:
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Build With
+This project was build using Javascript, React, React-Bootstrap
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+## Authors
+### The members of team NovelCoders
+#### Roxanna Vazquez
+Project Manager, Frontend, UI/UX Specialist, Snapshot Tester
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+#### Kolby Kiernan
+Project Coordinator, Backend
 
-## Learn More
+#### Jacob Daley
+Agile Workflow Manager, Frontend
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+#### Francisco Gutierrez
+Documentation Specialist, Backend
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Acknowledgments
+This project wouldn't be possible without the knowledge gained from the ThriveX Bootcamp, and some help from AI like chatGPT to check our work.
 
-### Code Splitting
+## Post-MVP Plans
+    Possibly adding recommendations based on what the user has in their libraries
+    Eventually adding 1000 books that the user should read in their life based on their library
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Project Planning
 
-### Analyzing the Bundle Size
+| Date | Activities | Goals |
+|------|------------|-------|
+| Sat. 2/3 | Discuss project guidelines and resources; teams choose roles and team project specs; set up project repo; git team workflow demo and practice; team management app selection and feature brainstorm | - |
+| Mon. 2/5 | Meet in main room for a few minutes then hold standup meetings in breakout rooms; Work day in class | - |
+| Wed. 2/7 | Meet in main room for a few minutes then hold standup meetings in breakout rooms; Discuss deployment possibilities and begin preparation for it; Work day in class | - |
+| Sat. 2/10 | Meet in main room for a few minutes then hold standup meetings in breakout rooms; Work day in class; end of Sprint 1 (development) | - |
+| Mon. 2/12 | Final standup meeting; start/complete Sprint 2 (finalization); Your project should be deployed and all features contained in the app should work to satisfy all project requirements as shown on Canvas (and the adapted requirements shown in your team's Project Plan doc) | - |
+| Wed. 2/14 | Meet in main room then hold final standup meetings in breakout rooms; submit your completed project and project requirements checklist on your team's Project Plan Doc; Present your project according to plan as discussed on Canvas and in class; hold Sprint 2 retrospective | - |
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
 
-### Making a Progressive Web App
+## API Endpoints
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+This document outlines the API endpoints provided by our server for managing books in a bookshelf.
 
-### Advanced Configuration
+### Search Books
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+- **GET /api/search**
+  - Description: Search for books via the Google Books API.
+  - Query Params: `query` (string) - The search query term or phrase.
+  - Response: A JSON array of books, each with a title and description.
+  - Example: `GET /api/search?query=Harry+Potter`
 
-### Deployment
+### Bookshelf Operations
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+#### Add a Book
 
-### `npm run build` fails to minify
+- **POST /bookshelf/add**
+  - Description: Add a new book to the bookshelf.
+  - Body: A JSON object containing the book details (`title`, `description`, etc.).
+  - Response: A JSON object of the added book.
+  - Example:
+    ```json
+    POST /bookshelf/add
+    {
+      "title": "The Hobbit",
+      "description": "A fantasy novel by J.R.R. Tolkien."
+    }
+    ```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+#### Update Read Status
+
+- **PUT /bookshelf/update/:id**
+  - Description: Update the read status of a book in the bookshelf.
+  - Params: `id` (string) - The ID of the book to update.
+  - Body: A JSON object containing the new read status (`readStatus`).
+  - Response: A JSON object of the updated book.
+  - Example:
+    ```json
+    PUT /bookshelf/update/123456789
+    {
+      "readStatus": true
+    }
+    ```
+
+#### Get All Books
+
+- **GET /bookshelf/all**
+  - Description: Retrieve all books from the bookshelf.
+  - Response: A JSON array of all books in the bookshelf.
+  - Example: `GET /bookshelf/all`
+
+#### Delete a Book
+
+- **DELETE /bookshelf/delete/:id**
+  - Description: Remove a book from the bookshelf.
+  - Params: `id` (string) - The ID of the book to delete.
+  - Response: A JSON object of the deleted book.
+  - Example: `DELETE /bookshelf/delete/123456789`

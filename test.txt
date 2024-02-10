@@ -1,0 +1,3 @@
+easyj4ke
+testing dev commits to feature branch
+added start page and logo
