@@ -1,5 +1,12 @@
+:root {
+  --primary-color: #136942ff;
+  --secondary-color:#FAFFF4;
+  --third-color: #FFE25Fff;
+}
+
 .App {
   text-align: center;
+  background-color: var(--primary-color);
 }
 
 .App-logo {
@@ -25,8 +32,9 @@
 }
 
 .App-link {
-  color: #61dafb;
+  color: var(--primary-color);
 }
+
 
 @keyframes App-logo-spin {
   from {
