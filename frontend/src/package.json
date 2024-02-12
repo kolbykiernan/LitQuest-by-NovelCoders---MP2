@@ -17,11 +17,11 @@
   },
   "scripts": {
     "start": "react-scripts start",
+    "start:legacy": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
+    "start:high-memory": "node --max-old-space-size=4096 ./node_modules/.bin/react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject",
-    "start:legacy": "NODE_OPTIONS=--openssl-legacy-provider react-scripts start",
-    "start": "node --max-old-space-size=4096 ./node_modules/.bin/react-scripts start"
+    "eject": "react-scripts eject"
   },
   "eslintConfig": {
     "extends": [
