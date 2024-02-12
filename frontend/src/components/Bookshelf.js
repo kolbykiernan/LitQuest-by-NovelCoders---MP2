@@ -13,7 +13,7 @@ function BookshelfDisplay() {
     const fetchBooks = async () => {
         setLoading(true);
         try {
-            const response = await fetch('/bookshelf/all');
+            const response = await fetch("https://litquestbe.onrender.com/bookshelf/all");
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
