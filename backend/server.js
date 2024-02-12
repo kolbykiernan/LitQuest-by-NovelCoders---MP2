@@ -2,16 +2,13 @@ import express, { json } from 'express';
 import axios from 'axios';
 import { connect, Schema, model } from 'mongoose';
 import cors from 'cors'; // Import CORS module
-import path from 'path'; // Import the path module
 
 import dotenv from 'dotenv';
 dotenv.config();
 
+
 const app = express();
 const port = process.env.PORT || 5000;
-
-// Static file declaration for serving the frontend build directory
-app.use(express.static(path.join(__dirname, 'frontend/build')));
 
 import { router as bookshelfRouter } from './controllers/books_controller.js';
 // Enable all CORS requests
@@ -48,7 +45,7 @@ app.get('/api/search', async (req, res) => {
 
   try {
     // Search books via Google Books API
-    const response = await axios.get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`);
+    const response = await get(`https://www.googleapis.com/books/v1/volumes?q=${query}&key=${apiKey}`);
     const books = response.data.items.map(item => ({
       title: item.volumeInfo.title,
       description: item.volumeInfo.description,
@@ -65,13 +62,8 @@ app.get('/api/search', async (req, res) => {
   }
 });
 
-// Catch-all handler for any request that doesn't match the above to serve index.html
-app.get('*', (req, res) => {
-  res.sendFile(path.join(__dirname, 'frontend/build/index.html'));
-});
-
 app.listen(port, () => {
   console.log(`Server running on port ${port}`);
 });
 
-// Removed the default export as it's not typically necessary for an Express server module
+export default app;
