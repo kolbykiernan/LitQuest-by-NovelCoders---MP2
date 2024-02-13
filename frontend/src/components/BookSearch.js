@@ -63,7 +63,7 @@ function BookSearch() {
         };
 
         try {
-            const response = await fetch('/bookshelf/add', {  // Updated endpoint
+            const response = await fetch('https://litquestbe.onrender.com/bookshelf/add', {  // Updated endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
