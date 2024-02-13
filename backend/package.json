@@ -5,6 +5,7 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
+    "start:high-memory": "node --max-old-space-size=4096 ./node_modules/.bin/react-scripts start",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon server.js",
     "build": "npm i"
