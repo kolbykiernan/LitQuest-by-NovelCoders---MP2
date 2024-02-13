@@ -13,7 +13,7 @@ function BookshelfDisplay() {
     const fetchBooks = async () => {
         setLoading(true);
         try {
-            const response = await fetch('/bookshelf/all');
+            const response = await fetch(`${REACT_APP_API_URL}/bookshelf/all`);
             if (!response.ok) {
                 throw new Error('Network response was not ok');
             }
@@ -40,7 +40,7 @@ function BookshelfDisplay() {
     const handleReadStatusChange = async (id, readStatus, event) => {
         event.stopPropagation();  // Prevent the card expansion when clicking the checkbox
         try {
-            await fetch(`/bookshelf/update/${id}`, {
+            await fetch(`${REACT_APP_API_URL}/bookshelf/update/${id}`, {
                 method: 'PUT',
                 headers: { 'Content-Type': 'application/json' },
                 body: JSON.stringify({ readStatus: !readStatus }),
@@ -54,7 +54,7 @@ function BookshelfDisplay() {
     const handleDelete = async (id, event) => {
         event.stopPropagation();  // Prevent the card expansion when clicking the delete button
         try {
-            await fetch(`/bookshelf/delete/${id}`, { method: 'DELETE' });
+            await fetch(`${REACT_APP_API_URL}/bookshelf/delete/${id}`, { method: 'DELETE' });
             setBooks(books.filter(book => book._id !== id));
         } catch (error) {
             console.error('Error deleting book:', error);

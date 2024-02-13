@@ -63,7 +63,7 @@ function BookSearch() {
         };
 
         try {
-            const response = await fetch('/bookshelf/add', {  // Updated endpoint
+            const response = await fetch(`${REACT_APP_API_URL}/bookshelf/add`, {  // Updated endpoint
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
