@@ -9,6 +9,10 @@ import Spinner from 'react-bootstrap/Spinner';
 import './BookSearch.css';
 import { BsSearch } from "react-icons/bs";
 
+const REACT_APP_API_URL = 'https://litquestalterapi.onrender.com'
+
+
+
 function BookSearch() {
     const [bookName, setBookName] = useState('');
     const [searchResults, setSearchResults] = useState([]);
