@@ -3,3 +3,5 @@ testing dev commits to feature branch
 added start page and logo
 
 npm install --save-dev @babel/plugin-proposal-private-property-in-object
+
+    "react-icons": "^4.3.1", 
