@@ -44,14 +44,14 @@ Using this app is straight forward, and simple:
 ## Coding style test
 
 ## Deployment
-This project is currently deployed at:
+This project is currently deployed at:https://lit-quest.onrender.com
 
 ## Build With
 This project was build using Javascript, React, React-Bootstrap
 
 ## Authors
 ### The members of team NovelCoders
-#### Roxanna Vazquez
+#### Roxana Vazquez
 Project Manager, Frontend, UI/UX Specialist, Snapshot Tester
 
 #### Kolby Kiernan
